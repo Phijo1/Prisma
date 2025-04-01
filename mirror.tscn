@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dta3q7vfg4hxv"]
+
+[ext_resource type="Script" uid="uid://bkb61m55eeiqt" path="res://mirror.gd" id="1_nk6sm"]
+[ext_resource type="Texture2D" uid="uid://cab2t8jcn3fv8" path="res://icon.svg" id="1_scjey"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nk6sm"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dx1wu"]
+size = Vector2(10, 10)
+
+[node name="Mirror" type="Area2D"]
+script = ExtResource("1_nk6sm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_scjey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nk6sm")
+
+[node name="GridChecker" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GridChecker"]
+shape = SubResource("RectangleShape2D_dx1wu")
+debug_color = Color(0.979057, 0, 0.391171, 0.42)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
