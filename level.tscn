@@ -76,11 +76,11 @@ layout_mode = 2
 
 [node name="EmptyGrid15" parent="CanvasLayer/RayGrid" instance=ExtResource("1_u52ul")]
 layout_mode = 2
-source = [2, 2]
+source = [4, 2]
 
 [node name="EmptyGrid16" parent="CanvasLayer/RayGrid" instance=ExtResource("1_u52ul")]
 layout_mode = 2
-source = [6, 4]
+source = [7, 4]
 
 [node name="EmptyGrid17" parent="CanvasLayer/RayGrid" instance=ExtResource("1_u52ul")]
 layout_mode = 2
@@ -131,6 +131,7 @@ direc = 3
 layout_mode = 2
 
 [node name="Filter" parent="CanvasLayer/PrismGrid/EmptyGrid2" instance=ExtResource("4_f2txt")]
+filterColour = 4
 
 [node name="EmptyGrid3" parent="CanvasLayer/PrismGrid" instance=ExtResource("1_u52ul")]
 layout_mode = 2

@@ -72,6 +72,15 @@ func updateLight():
 						splitter("up", i, j, grid2DArray[i][j].source[0])
 					elif grid2DArray[i][j].source[1] == 4:
 						splitter("right", i, j, grid2DArray[i][j].source[0])
+				elif grid2DArray[i][j].prismSlot.has_method("filter"):
+					if grid2DArray[i][j].source[1] == 1:
+						filter("down", i, j, grid2DArray[i][j].source[0])
+					elif grid2DArray[i][j].source[1] == 2:
+						filter("left", i, j, grid2DArray[i][j].source[0])
+					elif grid2DArray[i][j].source[1] == 3:
+						filter("up", i, j, grid2DArray[i][j].source[0])
+					elif grid2DArray[i][j].source[1] == 4:
+						filter("right", i, j, grid2DArray[i][j].source[0])
 
 func rayDown(i,j,colour):
 	i += 1
@@ -98,6 +107,8 @@ func rayLeft(i,j,colour):
 			mirror("left", i, j, colour)
 		elif grid2DArray[i][j].prismSlot.has_method("splitter"):
 			splitter("left", i, j, colour)
+		elif grid2DArray[i][j].prismSlot.has_method("filter"):
+			filter("left", i, j, colour)
 
 func rayUp(i,j,colour):
 	i -= 1
@@ -110,6 +121,8 @@ func rayUp(i,j,colour):
 			mirror("up", i, j, colour)
 		elif grid2DArray[i][j].prismSlot.has_method("splitter"):
 			splitter("up", i, j, colour)
+		elif grid2DArray[i][j].prismSlot.has_method("filter"):
+			filter("up", i, j, colour)
 
 func rayRight(i,j,colour):
 	j += 1
@@ -122,7 +135,8 @@ func rayRight(i,j,colour):
 			mirror("right", i, j, colour)
 		elif grid2DArray[i][j].prismSlot.has_method("splitter"):
 			splitter("right", i, j, colour)
-
+		elif grid2DArray[i][j].prismSlot.has_method("filter"):
+			filter("right", i, j, colour)
 
 func mirror(direc, i, j, colour):
 	if direc == "down":
@@ -269,4 +283,37 @@ func splitter(direc, i, j, colour):
 				rayDown(i,j,4)
 
 func filter(direc, i, j, colour):
-	print("TODO")
+	var filter = grid2DArray[i][j].prismSlot.filterColour
+	if filter != colour:
+		if colour == 5:
+			if filter == 2:
+				colour = 3
+			elif filter == 3:
+				colour = 2
+		elif colour == 6:
+			if filter == 3:
+				colour = 4
+			elif filter == 4:
+				colour = 3
+		elif colour == 7:
+			if filter == 2:
+				colour = 4
+			elif filter == 4:
+				colour = 2
+
+		if direc == "down":
+			grid2DArray[i][j].vert = [colour,1]
+			grid2DArray[i][j].drawLine()
+			rayDown(i,j,colour)
+		elif direc == "left":
+			grid2DArray[i][j].hor = [colour,1]
+			grid2DArray[i][j].drawLine()
+			rayLeft(i,j,colour)
+		elif direc == "up":
+			grid2DArray[i][j].vert = [colour,2]
+			grid2DArray[i][j].drawLine()
+			rayUp(i,j,colour)
+		elif direc == "right":
+			grid2DArray[i][j].hor = [colour,2]
+			grid2DArray[i][j].drawLine()
+			rayRight(i,j,colour)
