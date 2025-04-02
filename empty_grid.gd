@@ -50,6 +50,10 @@ func _ready() -> void:
 		sourceL.visible = true
 		sourceL.modulate = Color(colourDict[dest[0]])
 		destSource = sourceL
+	
+	for i in get_children():
+		if i.has_method("block"):
+			prismSlot = i
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
