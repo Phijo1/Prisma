@@ -4,6 +4,9 @@ extends Node2D
 @onready var prismGrid = %PrismGrid
 @onready var gridArray = rayGrid.get_children()
 var grid2DArray: Array[Array]
+var winArray: Array
+
+var win = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,8 +35,11 @@ func _process(delta: float) -> void:
 	pass
 
 func updateLight():
+	winArray.clear()
 	for x in gridArray:
 		x.clearLines()
+		if x.dest != [0,0]:
+			winArray.append(x)
 	for i in range(5):
 		for j in range(5):
 			if grid2DArray[i][j].source != [0,0]:
@@ -90,6 +96,11 @@ func updateLight():
 						combiner("up", i, j, grid2DArray[i][j].source[0])
 					elif grid2DArray[i][j].source[1] == 4:
 						combiner("right", i, j, grid2DArray[i][j].source[0])
+	win = true
+	for y in winArray:
+		if y.destMatched == false:
+			win = false
+
 
 func rayDown(i,j,colour):
 	i += 1
