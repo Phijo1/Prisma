@@ -127,7 +127,7 @@ func drawLine():
 				destMatched = true
 	if prismSlot != null:
 		if prismSlot.has_method("combiner"):
-			if evalRays(prismSlot.ray1,prismSlot.ray2) == dest[0]:
+			if (evalRays(prismSlot.ray1,prismSlot.ray2) == dest[0]) and (dest[0] != 0):
 				destMatched = true
 	if destMatched == true:
 		destSource.modulate = Color("Black")
