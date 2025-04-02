@@ -136,6 +136,10 @@ func clearLines():
 	for i in children:
 		if i.has_method("line_object"):
 			i.queue_free()
+	if prismSlot != null:
+		if prismSlot.has_method("combiner"):
+			prismSlot.ray1 = 0
+			prismSlot.ray2 = 0
 	vert = [0,0]
 	hor = [0,0]
 	tr = [0,0]
