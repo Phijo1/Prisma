@@ -188,9 +188,11 @@ func splitter(direc, i, j, colour):
 	if direc == "down":
 		if grid2DArray[i][j].prismSlot.direc == 1:
 			if (colour == 2) or (colour == 3) or (colour == 4):
-				grid2DArray[i][j].vert = [colour,1]
+				grid2DArray[i][j].tr = [colour,1]
+				grid2DArray[i][j].lt = [colour,2]
 				grid2DArray[i][j].drawLine()
-				rayDown(i,j,colour)
+				rayRight(i,j,colour)
+				rayLeft(i,j,colour)
 			elif colour == 5:
 				grid2DArray[i][j].tr = [3,1]
 				grid2DArray[i][j].lt = [2,2]
@@ -212,33 +214,37 @@ func splitter(direc, i, j, colour):
 	elif direc == "left":
 		if grid2DArray[i][j].prismSlot.direc == 3:
 			if (colour == 2) or (colour == 3) or (colour == 4):
-				grid2DArray[i][j].hor = [colour,2]
+				grid2DArray[i][j].tr = [colour,2]
+				grid2DArray[i][j].rb = [colour,1]
 				grid2DArray[i][j].drawLine()
-				rayLeft(i,j,colour)
+				rayUp(i,j,colour)
+				rayDown(i,j,colour)
 			elif colour == 5:
-				grid2DArray[i][j].rb = [3,2]
-				grid2DArray[i][j].bl = [2,1]
+				grid2DArray[i][j].tr = [3,2]
+				grid2DArray[i][j].rb = [2,1]
 				grid2DArray[i][j].drawLine()
-				rayRight(i,j,3)
-				rayLeft(i,j,2)
+				rayUp(i,j,3)
+				rayDown(i,j,2)
 			elif colour == 6:
-				grid2DArray[i][j].rb = [3,2]
-				grid2DArray[i][j].bl = [4,1]
+				grid2DArray[i][j].tr = [3,2]
+				grid2DArray[i][j].rb = [4,1]
 				grid2DArray[i][j].drawLine()
-				rayRight(i,j,3)
-				rayLeft(i,j,4)
+				rayUp(i,j,3)
+				rayDown(i,j,4)
 			elif colour == 7:
-				grid2DArray[i][j].rb = [2,2]
-				grid2DArray[i][j].bl = [4,1]
+				grid2DArray[i][j].tr = [2,2]
+				grid2DArray[i][j].rb = [4,1]
 				grid2DArray[i][j].drawLine()
-				rayRight(i,j,2)
-				rayLeft(i,j,4)
+				rayUp(i,j,2)
+				rayDown(i,j,4)
 	elif direc == "up":
 		if grid2DArray[i][j].prismSlot.direc == 3:
 			if (colour == 2) or (colour == 3) or (colour == 4):
-				grid2DArray[i][j].vert = [colour,2]
+				grid2DArray[i][j].rb = [colour,2]
+				grid2DArray[i][j].bl = [colour,1]
 				grid2DArray[i][j].drawLine()
-				rayUp(i,j,colour)
+				rayRight(i,j,colour)
+				rayLeft(i,j,colour)
 			elif colour == 5:
 				grid2DArray[i][j].rb = [3,2]
 				grid2DArray[i][j].bl = [2,1]
@@ -260,9 +266,11 @@ func splitter(direc, i, j, colour):
 	elif direc == "right":
 		if grid2DArray[i][j].prismSlot.direc == 4:
 			if (colour == 2) or (colour == 3) or (colour == 4):
-				grid2DArray[i][j].hor = [colour,1]
+				grid2DArray[i][j].lt = [colour,1]
+				grid2DArray[i][j].bl = [colour,2]
 				grid2DArray[i][j].drawLine()
-				rayRight(i,j,colour)
+				rayUp(i,j,colour)
+				rayDown(i,j,colour)
 			elif colour == 5:
 				grid2DArray[i][j].lt = [3,1]
 				grid2DArray[i][j].bl = [2,2]

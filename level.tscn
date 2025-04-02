@@ -38,7 +38,7 @@ layout_mode = 2
 
 [node name="EmptyGrid3" parent="CanvasLayer/RayGrid" instance=ExtResource("1_u52ul")]
 layout_mode = 2
-source = [5, 1]
+source = [2, 1]
 
 [node name="EmptyGrid4" parent="CanvasLayer/RayGrid" instance=ExtResource("1_u52ul")]
 layout_mode = 2
@@ -76,7 +76,7 @@ layout_mode = 2
 
 [node name="EmptyGrid15" parent="CanvasLayer/RayGrid" instance=ExtResource("1_u52ul")]
 layout_mode = 2
-source = [4, 2]
+source = [3, 2]
 
 [node name="EmptyGrid16" parent="CanvasLayer/RayGrid" instance=ExtResource("1_u52ul")]
 layout_mode = 2
