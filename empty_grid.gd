@@ -125,6 +125,10 @@ func drawLine():
 		if (dest[1] == 3) or (dest[1] == 4):
 			if bl[0] == dest[0]:
 				destMatched = true
+	if prismSlot != null:
+		if prismSlot.has_method("combiner"):
+			if evalRays(prismSlot.ray1,prismSlot.ray2) == dest[0]:
+				destMatched = true
 	if destMatched == true:
 		destSource.modulate = Color("Black")
 		
@@ -146,3 +150,15 @@ func clearLines():
 	rb = [0,0]
 	bl = [0,0]
 	lt = [0,0]
+
+func evalRays(ray1, ray2):
+	if (ray1 != 0) and (ray2 != 0):
+		if (ray1 == 2 and ray2 == 3) or (ray2 == 2 and ray1 == 3):
+			return 5
+		elif (ray1 == 2 and ray2 == 4) or (ray1 == 4 and ray2 == 2):
+			return 7
+		elif (ray1 == 3 and ray2 == 4) or (ray1 == 4 and ray2 == 3):
+			return 6
+	if ray1 == ray2:
+		return ray1
+	return 0
