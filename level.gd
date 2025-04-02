@@ -105,7 +105,7 @@ func updateLight():
 			win = false
 	
 	if win:
-		if (levelNumber > CurrentLevel.Value):
+		if (levelNumber > CurrentLevel.value):
 			CurrentLevel.value =  levelNumber
 		win_show.emit()
 	else:
