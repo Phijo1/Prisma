@@ -7,7 +7,7 @@ func _on_home_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://menus/main_menu.tscn")
 
 func _on_next_level_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://levels/level%d.tscn" %CurrentLevel.value)
+	get_tree().change_scene_to_file("res://levels/level%d.tscn" %(CurrentLevel.value + 1))
 
 func _on_level_win_hide() -> void:
 	$NextLevelButton.visible = false

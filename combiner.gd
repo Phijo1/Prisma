@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 
 
 func _input(event):
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and event.button_index == 1:
 		if event.pressed == true:
 			if (pickedUp == false) and (mouseOver == true):
 				pickedUp = true
