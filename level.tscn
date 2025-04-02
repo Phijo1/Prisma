@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfsrsa2l7bn3f"]
+[gd_scene load_steps=8 format=3 uid="uid://bfsrsa2l7bn3f"]
 
 [ext_resource type="PackedScene" uid="uid://dieejrp8kpwab" path="res://empty_grid.tscn" id="1_u52ul"]
 [ext_resource type="Script" uid="uid://frcp702o3bx" path="res://level.gd" id="1_vonw3"]
 [ext_resource type="PackedScene" uid="uid://c3v2pel6k0shv" path="res://splitter.tscn" id="3_0b4ue"]
+[ext_resource type="PackedScene" uid="uid://do10hshkcgjm" path="res://block.tscn" id="3_1ainy"]
 [ext_resource type="PackedScene" uid="uid://dta3q7vfg4hxv" path="res://mirror.tscn" id="3_oi3di"]
 [ext_resource type="PackedScene" uid="uid://bykhrc6vnbjhf" path="res://filter.tscn" id="4_f2txt"]
+[ext_resource type="PackedScene" uid="uid://dd8km2o6vd228" path="res://combiner.tscn" id="6_n6hdu"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_vonw3")
@@ -38,7 +40,6 @@ layout_mode = 2
 
 [node name="EmptyGrid3" parent="CanvasLayer/RayGrid" instance=ExtResource("1_u52ul")]
 layout_mode = 2
-source = [5, 1]
 
 [node name="EmptyGrid4" parent="CanvasLayer/RayGrid" instance=ExtResource("1_u52ul")]
 layout_mode = 2
@@ -74,13 +75,15 @@ layout_mode = 2
 [node name="EmptyGrid14" parent="CanvasLayer/RayGrid" instance=ExtResource("1_u52ul")]
 layout_mode = 2
 
+[node name="Block" parent="CanvasLayer/RayGrid/EmptyGrid14" instance=ExtResource("3_1ainy")]
+
 [node name="EmptyGrid15" parent="CanvasLayer/RayGrid" instance=ExtResource("1_u52ul")]
 layout_mode = 2
-source = [2, 2]
+source = [3, 2]
 
 [node name="EmptyGrid16" parent="CanvasLayer/RayGrid" instance=ExtResource("1_u52ul")]
 layout_mode = 2
-source = [6, 4]
+source = [2, 4]
 
 [node name="EmptyGrid17" parent="CanvasLayer/RayGrid" instance=ExtResource("1_u52ul")]
 layout_mode = 2
@@ -131,13 +134,12 @@ direc = 3
 layout_mode = 2
 
 [node name="Filter" parent="CanvasLayer/PrismGrid/EmptyGrid2" instance=ExtResource("4_f2txt")]
+filterColour = 4
 
 [node name="EmptyGrid3" parent="CanvasLayer/PrismGrid" instance=ExtResource("1_u52ul")]
 layout_mode = 2
 
-[node name="Mirror" parent="CanvasLayer/PrismGrid/EmptyGrid3" instance=ExtResource("3_oi3di")]
-position = Vector2(0, 1)
-direc = 2
+[node name="Combiner" parent="CanvasLayer/PrismGrid/EmptyGrid3" instance=ExtResource("6_n6hdu")]
 
 [node name="EmptyGrid4" parent="CanvasLayer/PrismGrid" instance=ExtResource("1_u52ul")]
 layout_mode = 2
