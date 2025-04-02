@@ -3,10 +3,13 @@ extends Node2D
 @onready var rayGrid = %RayGrid
 @onready var prismGrid = %PrismGrid
 @onready var gridArray = rayGrid.get_children()
+@export var levelNumber = 1
 var grid2DArray: Array[Array]
 var winArray: Array
 
 var win = false
+signal win_show
+signal win_hide
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -100,6 +103,12 @@ func updateLight():
 	for y in winArray:
 		if y.destMatched == false:
 			win = false
+	
+	if win:
+		CurrentLevel.value = levelNumber
+		win_show.emit()
+	else:
+		win_hide.emit()
 
 
 func rayDown(i,j,colour):

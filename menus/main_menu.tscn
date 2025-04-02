@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cg6thxnbewju"]
+[gd_scene load_steps=3 format=3 uid="uid://cg6thxnbewju"]
 
-[ext_resource type="Script" uid="uid://y01h1jbgyrgy" path="res://v_level_container.gd" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://cawewskl8jt4h" path="res://color_rect.gd" id="1_ij7vn"]
+[ext_resource type="Script" uid="uid://y01h1jbgyrgy" path="res://menus/v_level_container.gd" id="2_yjgyn"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -20,6 +21,7 @@ offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.588579, 0.569844, 0.987911, 1)
+script = ExtResource("1_ij7vn")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
@@ -37,7 +39,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_06t4h")
+script = ExtResource("2_yjgyn")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -48,12 +50,9 @@ offset_left = 384.0
 offset_top = 24.0
 offset_right = -384.0
 offset_bottom = -520.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 50
 text = "PRISMA"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0

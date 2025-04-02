@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7yokb5iixl7i"]
+
+[ext_resource type="Script" uid="uid://cijsbwmklnkjy" path="res://menus/hud.gd" id="1_633jc"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_633jc")
+
+[node name="HomeButton" type="Button" parent="."]
+offset_left = 1048.0
+offset_top = 544.0
+offset_right = 1137.0
+offset_bottom = 632.0
+text = "HOME"
+
+[node name="NextLevelButton" type="Button" parent="."]
+offset_left = 944.0
+offset_top = 544.0
+offset_right = 1033.0
+offset_bottom = 632.0
+text = "NEXT
+LEVEL"
+
+[connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="NextLevelButton" to="." method="_on_next_level_button_pressed"]

@@ -1,13 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://fsylw7or5uaf"]
+[gd_scene load_steps=9 format=3 uid="uid://1o3simy1oxce"]
 
 [ext_resource type="Script" uid="uid://frcp702o3bx" path="res://level.gd" id="1_g1dg4"]
 [ext_resource type="PackedScene" uid="uid://dieejrp8kpwab" path="res://empty_grid.tscn" id="2_s1bpp"]
 [ext_resource type="PackedScene" uid="uid://c3v2pel6k0shv" path="res://splitter.tscn" id="3_76ugp"]
+[ext_resource type="PackedScene" path="res://block.tscn" id="3_e8p81"]
 [ext_resource type="PackedScene" uid="uid://bykhrc6vnbjhf" path="res://filter.tscn" id="4_e8p81"]
 [ext_resource type="PackedScene" uid="uid://dta3q7vfg4hxv" path="res://mirror.tscn" id="5_55gdq"]
+[ext_resource type="PackedScene" path="res://combiner.tscn" id="6_55gdq"]
+[ext_resource type="PackedScene" uid="uid://b7yokb5iixl7i" path="res://menus/hud.tscn" id="8_crte6"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_g1dg4")
+levelNumber = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -38,7 +42,6 @@ layout_mode = 2
 
 [node name="EmptyGrid3" parent="CanvasLayer/RayGrid" instance=ExtResource("2_s1bpp")]
 layout_mode = 2
-source = [5, 1]
 
 [node name="EmptyGrid4" parent="CanvasLayer/RayGrid" instance=ExtResource("2_s1bpp")]
 layout_mode = 2
@@ -74,13 +77,15 @@ layout_mode = 2
 [node name="EmptyGrid14" parent="CanvasLayer/RayGrid" instance=ExtResource("2_s1bpp")]
 layout_mode = 2
 
+[node name="Block" parent="CanvasLayer/RayGrid/EmptyGrid14" instance=ExtResource("3_e8p81")]
+
 [node name="EmptyGrid15" parent="CanvasLayer/RayGrid" instance=ExtResource("2_s1bpp")]
 layout_mode = 2
-source = [2, 2]
+source = [3, 2]
 
 [node name="EmptyGrid16" parent="CanvasLayer/RayGrid" instance=ExtResource("2_s1bpp")]
 layout_mode = 2
-source = [6, 4]
+source = [2, 4]
 
 [node name="EmptyGrid17" parent="CanvasLayer/RayGrid" instance=ExtResource("2_s1bpp")]
 layout_mode = 2
@@ -131,13 +136,12 @@ direc = 3
 layout_mode = 2
 
 [node name="Filter" parent="CanvasLayer/PrismGrid/EmptyGrid2" instance=ExtResource("4_e8p81")]
+filterColour = 4
 
 [node name="EmptyGrid3" parent="CanvasLayer/PrismGrid" instance=ExtResource("2_s1bpp")]
 layout_mode = 2
 
-[node name="Mirror" parent="CanvasLayer/PrismGrid/EmptyGrid3" instance=ExtResource("5_55gdq")]
-position = Vector2(0, 1)
-direc = 2
+[node name="Combiner" parent="CanvasLayer/PrismGrid/EmptyGrid3" instance=ExtResource("6_55gdq")]
 
 [node name="EmptyGrid4" parent="CanvasLayer/PrismGrid" instance=ExtResource("2_s1bpp")]
 layout_mode = 2
@@ -152,3 +156,8 @@ layout_mode = 2
 [node name="Mirror" parent="CanvasLayer/PrismGrid/EmptyGrid5" instance=ExtResource("5_55gdq")]
 position = Vector2(0, 1)
 direc = 4
+
+[node name="HUD" parent="." instance=ExtResource("8_crte6")]
+
+[connection signal="win_hide" from="." to="HUD" method="_on_level_win_hide"]
+[connection signal="win_show" from="." to="HUD" method="_on_level_win_show"]
