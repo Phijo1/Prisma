@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://dieejrp8kpwab" path="res://empty_grid.tscn" id="1_u52ul"]
 [ext_resource type="Script" uid="uid://frcp702o3bx" path="res://level.gd" id="1_vonw3"]
 [ext_resource type="PackedScene" uid="uid://c3v2pel6k0shv" path="res://splitter.tscn" id="3_0b4ue"]
-[ext_resource type="PackedScene" path="res://block.tscn" id="3_1ainy"]
+[ext_resource type="PackedScene" uid="uid://do10hshkcgjm" path="res://block.tscn" id="3_1ainy"]
 [ext_resource type="PackedScene" uid="uid://dta3q7vfg4hxv" path="res://mirror.tscn" id="3_oi3di"]
 [ext_resource type="PackedScene" uid="uid://bykhrc6vnbjhf" path="res://filter.tscn" id="4_f2txt"]
-[ext_resource type="PackedScene" path="res://combiner.tscn" id="6_n6hdu"]
+[ext_resource type="PackedScene" uid="uid://dd8km2o6vd228" path="res://combiner.tscn" id="6_n6hdu"]
 [ext_resource type="PackedScene" uid="uid://b7yokb5iixl7i" path="res://menus/hud.tscn" id="8_km5ld"]
 
 [node name="Level" type="Node2D"]
