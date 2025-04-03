@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7yokb5iixl7i"]
+[gd_scene load_steps=3 format=3 uid="uid://b7yokb5iixl7i"]
 
 [ext_resource type="Script" uid="uid://cijsbwmklnkjy" path="res://menus/hud.gd" id="1_633jc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_633jc"]
+bg_color = Color(0.484066, 0.0761015, 0.0821945, 1)
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_633jc")
@@ -20,5 +23,16 @@ offset_bottom = 632.0
 text = "NEXT
 LEVEL"
 
+[node name="MuteAudio" type="Button" parent="."]
+offset_left = 1050.0
+offset_top = 22.0
+offset_right = 1139.0
+offset_bottom = 110.0
+theme_override_styles/pressed = SubResource("StyleBoxFlat_633jc")
+toggle_mode = true
+text = "MUTE
+AUDIO"
+
 [connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
 [connection signal="pressed" from="NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="toggled" from="MuteAudio" to="." method="_on_mute_audio_toggled"]

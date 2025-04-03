@@ -7,6 +7,7 @@ extends Node2D
 var grid2DArray: Array[Array]
 var winArray: Array
 
+var muteAudio = false
 var win = false
 signal win_show
 signal win_hide
@@ -105,10 +106,13 @@ func updateLight():
 			win = false
 	
 	if win:
+		%ColorRect.won = true
+		%AudioPlayer.playYippee()
 		if (levelNumber > CurrentLevel.value):
 			CurrentLevel.value =  levelNumber
 		win_show.emit()
 	else:
+		%ColorRect.won = false
 		win_hide.emit()
 
 
@@ -250,7 +254,7 @@ func splitter(direc, i, j, colour):
 				rayRight(i,j,2)
 				rayLeft(i,j,4)
 	elif direc == "left":
-		if grid2DArray[i][j].prismSlot.direc == 3:
+		if grid2DArray[i][j].prismSlot.direc == 2:
 			if (colour == 2) or (colour == 3) or (colour == 4):
 				grid2DArray[i][j].tr = [colour,2]
 				grid2DArray[i][j].rb = [colour,1]

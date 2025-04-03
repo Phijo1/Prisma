@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://do10hshkcgjm"]
 
 [ext_resource type="Script" uid="uid://oo85ymgj42nl" path="res://block.gd" id="1_xfwl5"]
-[ext_resource type="Texture2D" uid="uid://cab2t8jcn3fv8" path="res://icon.svg" id="2_5d32t"]
+[ext_resource type="Texture2D" uid="uid://dwup5skmjouy4" path="res://sprites/block.png" id="2_xfwl5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nk6sm"]
 size = Vector2(128, 128)
@@ -13,8 +13,7 @@ size = Vector2(10, 10)
 script = ExtResource("1_xfwl5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.103744, 0.103744, 0.103744, 1)
-texture = ExtResource("2_5d32t")
+texture = ExtResource("2_xfwl5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nk6sm")

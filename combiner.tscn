@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dd8km2o6vd228"]
 
 [ext_resource type="Script" uid="uid://xgukkbxqbysf" path="res://combiner.gd" id="1_lyrof"]
-[ext_resource type="Texture2D" uid="uid://cab2t8jcn3fv8" path="res://icon.svg" id="2_1q34i"]
+[ext_resource type="Texture2D" uid="uid://cs0o4so1k0oq" path="res://sprites/combiner.png" id="2_lyrof"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nk6sm"]
 size = Vector2(128, 128)
@@ -13,8 +13,7 @@ size = Vector2(10, 10)
 script = ExtResource("1_lyrof")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.243137, 0.478431, 0.439216, 0.803922)
-texture = ExtResource("2_1q34i")
+texture = ExtResource("2_lyrof")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nk6sm")

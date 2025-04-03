@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://nnrsbcdj3dia"]
+[gd_scene load_steps=8 format=3 uid="uid://c1yvqs6ve8owo"]
 
 [ext_resource type="Script" uid="uid://frcp702o3bx" path="res://level.gd" id="1_mj76i"]
+[ext_resource type="Script" uid="uid://cawewskl8jt4h" path="res://color_rect.gd" id="2_1u1qr"]
 [ext_resource type="PackedScene" uid="uid://dieejrp8kpwab" path="res://empty_grid.tscn" id="2_mdw0g"]
 [ext_resource type="PackedScene" uid="uid://dd8km2o6vd228" path="res://combiner.tscn" id="3_othu4"]
 [ext_resource type="PackedScene" uid="uid://dta3q7vfg4hxv" path="res://mirror.tscn" id="4_dn616"]
+[ext_resource type="PackedScene" uid="uid://dnts7v2007dgu" path="res://sfx/AudioPlayer.tscn" id="7_00pwx"]
 [ext_resource type="PackedScene" uid="uid://b7yokb5iixl7i" path="res://menus/hud.tscn" id="8_yruw8"]
 
 [node name="Level" type="Node2D"]
@@ -11,6 +13,18 @@ script = ExtResource("1_mj76i")
 levelNumber = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("2_1u1qr")
 
 [node name="RayGrid" type="GridContainer" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -147,6 +161,9 @@ layout_mode = 2
 [node name="Mirror" parent="CanvasLayer/PrismGrid/EmptyGrid5" instance=ExtResource("4_dn616")]
 
 [node name="HUD" parent="." instance=ExtResource("8_yruw8")]
+
+[node name="AudioPlayer" parent="." instance=ExtResource("7_00pwx")]
+unique_name_in_owner = true
 
 [connection signal="win_hide" from="." to="HUD" method="_on_level_win_hide"]
 [connection signal="win_show" from="." to="HUD" method="_on_level_win_show"]

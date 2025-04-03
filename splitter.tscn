@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c3v2pel6k0shv"]
 
 [ext_resource type="Script" uid="uid://cufbh0qhii30c" path="res://splitter.gd" id="1_2t55a"]
-[ext_resource type="Texture2D" uid="uid://cab2t8jcn3fv8" path="res://icon.svg" id="2_03yhy"]
+[ext_resource type="Texture2D" uid="uid://cwa6ws6m4hfu3" path="res://sprites/splitter.png" id="2_2t55a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nk6sm"]
 size = Vector2(128, 128)
@@ -13,8 +13,7 @@ size = Vector2(10, 10)
 script = ExtResource("1_2t55a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.933333, 0.933333, 0.917647, 0.647059)
-texture = ExtResource("2_03yhy")
+texture = ExtResource("2_2t55a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nk6sm")

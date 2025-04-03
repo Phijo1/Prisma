@@ -53,9 +53,9 @@ func _input(event):
 			rotation_degrees = 360/4 * direc
 			return
 		elif pickedUp == false and checkUnder() == false:
-			direc += 1
-			if direc == 5:
-				direc = 1
+			direc -= 1
+			if direc == 0:
+				direc = 4
 			rotation_degrees = 360/4 * direc
 			get_node("/root/Level").updateLight()
 			return
@@ -77,10 +77,12 @@ func _input(event):
 
 func _on_mouse_entered() -> void:
 	mouseOver = true
+	self.modulate = Color("gray")
 
 
 func _on_mouse_exited() -> void:
 	mouseOver = false
+	self.modulate = Color("white")
 
 
 func combiner():
@@ -88,7 +90,6 @@ func combiner():
 
 func checkUnder():
 	var overlay = gridChecker.get_overlapping_areas()
-	print(overlay)
 	for i in overlay:
 		if i != self:
 			if i.has_method("checkUnder"):

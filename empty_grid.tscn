@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dieejrp8kpwab"]
+[gd_scene load_steps=5 format=3 uid="uid://dieejrp8kpwab"]
 
 [ext_resource type="Script" uid="uid://b0wev2ucctlf4" path="res://empty_grid.gd" id="1_dj0wp"]
-[ext_resource type="Texture2D" uid="uid://cab2t8jcn3fv8" path="res://icon.svg" id="1_t3rwh"]
+[ext_resource type="Texture2D" uid="uid://dor4en2p6xjfi" path="res://sprites/sourceDest.png" id="2_ekh1s"]
+[ext_resource type="Texture2D" uid="uid://7mc5lpe7idrq" path="res://sprites/gridBox.png" id="3_ekh1s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dj0wp"]
 size = Vector2(128, 128)
@@ -19,7 +20,7 @@ visible = false
 z_index = 2
 position = Vector2(0, -64)
 scale = Vector2(0.15625, 0.15625)
-texture = ExtResource("1_t3rwh")
+texture = ExtResource("2_ekh1s")
 
 [node name="SourceR" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -27,7 +28,7 @@ visible = false
 z_index = 2
 position = Vector2(64, 0)
 scale = Vector2(0.15625, 0.15625)
-texture = ExtResource("1_t3rwh")
+texture = ExtResource("2_ekh1s")
 
 [node name="SourceD" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -35,7 +36,7 @@ visible = false
 z_index = 2
 position = Vector2(0, 64)
 scale = Vector2(0.15625, 0.15625)
-texture = ExtResource("1_t3rwh")
+texture = ExtResource("2_ekh1s")
 
 [node name="SourceL" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -43,7 +44,7 @@ visible = false
 z_index = 2
 position = Vector2(-64, 0)
 scale = Vector2(0.15625, 0.15625)
-texture = ExtResource("1_t3rwh")
+texture = ExtResource("2_ekh1s")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -52,4 +53,4 @@ shape = SubResource("RectangleShape2D_dj0wp")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 modulate = Color(1, 1, 1, 0.0431373)
-texture = ExtResource("1_t3rwh")
+texture = ExtResource("3_ekh1s")
