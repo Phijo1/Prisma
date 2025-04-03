@@ -1,0 +1,137 @@
+[gd_scene load_steps=4 format=3 uid="uid://ecvcapddnke7"]
+
+[ext_resource type="Script" uid="uid://frcp702o3bx" path="res://level.gd" id="1_8jhno"]
+[ext_resource type="PackedScene" uid="uid://dieejrp8kpwab" path="res://empty_grid.tscn" id="2_ns7dn"]
+[ext_resource type="PackedScene" uid="uid://b7yokb5iixl7i" path="res://menus/hud.tscn" id="3_jihs6"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_8jhno")
+levelNumber = 14
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RayGrid" type="GridContainer" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 128
+theme_override_constants/v_separation = 128
+columns = 5
+
+[node name="EmptyGrid" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid2" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid3" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid4" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid5" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid6" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid7" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid8" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid9" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid10" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid11" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid12" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid13" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid14" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid15" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid16" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid17" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid18" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid19" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid20" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid21" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid22" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid23" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid24" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid25" parent="CanvasLayer/RayGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="PrismGrid" type="GridContainer" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = -256.0
+offset_right = 104.0
+offset_bottom = 256.0
+grow_vertical = 2
+theme_override_constants/v_separation = 128
+
+[node name="EmptyGrid" parent="CanvasLayer/PrismGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid2" parent="CanvasLayer/PrismGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid3" parent="CanvasLayer/PrismGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid4" parent="CanvasLayer/PrismGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="EmptyGrid5" parent="CanvasLayer/PrismGrid" instance=ExtResource("2_ns7dn")]
+layout_mode = 2
+
+[node name="HUD" parent="." instance=ExtResource("3_jihs6")]
+
+[connection signal="win_hide" from="." to="HUD" method="_on_level_win_hide"]
+[connection signal="win_show" from="." to="HUD" method="_on_level_win_show"]
