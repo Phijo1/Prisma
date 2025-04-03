@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dnts7v2007dgu" path="res://sfx/AudioPlayer.tscn" id="8_jvmxc"]
 [ext_resource type="PackedScene" uid="uid://drpf67f4lhmdq" path="res://sfx/MusicPlayer.tscn" id="9_csfeo"]
 
-[node name="Level3" type="Node2D"]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_h7pi5")
 levelNumber = 11
 
