@@ -22,4 +22,4 @@ func playJazz():
 	self.play(CurrentLevel.musicPos)
 
 func _on_finished() -> void:
-	self.play()
+	self.play(0.0)

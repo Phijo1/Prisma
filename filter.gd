@@ -45,6 +45,7 @@ func _input(event):
 			if (pickedUp == true) and (mouseOver == true):
 				pickedUp = false
 				%Sprite2D.rotation = spriteRotate
+				%AudioPlayer.playPutDown()
 				var areas = gridChecker.get_overlapping_areas()
 				if len(areas) > 1:
 					if areas[1].get_parent().has_method("empty_grid"):
