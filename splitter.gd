@@ -5,6 +5,9 @@ extends Area2D
 var pickedUp = false
 var mouseOver = false
 var lastLocation: Control
+var wiggle = 0.0
+var goingUp = true
+var spriteRotate = 0.0
 @export var direc = 1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,16 +19,28 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if pickedUp == true:
 		global_position = get_global_mouse_position()
+		%Sprite2D.rotate(wiggle)
+		if goingUp == true:
+			wiggle += 0.00001
+			if wiggle > 0.0007:
+				goingUp = false
+		else:
+			wiggle -= 0.00001
+			if wiggle < -0.0007:
+				goingUp = true
 
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == 1:
 		if event.pressed == true:
 			if (pickedUp == false) and (mouseOver == true):
+				spriteRotate = %Sprite2D.rotation
 				pickedUp = true
+				%AudioPlayer.playPickup()
 		if event.pressed == false:
 			if (pickedUp == true) and (mouseOver == true):
 				pickedUp = false
+				%Sprite2D.rotation = spriteRotate
 				var areas = gridChecker.get_overlapping_areas()
 				if len(areas) > 1:
 					if areas[1].get_parent().has_method("empty_grid"):

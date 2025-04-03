@@ -1,0 +1,158 @@
+[gd_scene load_steps=7 format=3 uid="uid://delashid8ue70"]
+
+[ext_resource type="Script" uid="uid://frcp702o3bx" path="res://level.gd" id="1_6ffgp"]
+[ext_resource type="Script" uid="uid://cawewskl8jt4h" path="res://color_rect.gd" id="2_v61mo"]
+[ext_resource type="PackedScene" uid="uid://dieejrp8kpwab" path="res://empty_grid.tscn" id="3_nqp4f"]
+[ext_resource type="PackedScene" uid="uid://b7yokb5iixl7i" path="res://menus/hud.tscn" id="4_mf5tr"]
+[ext_resource type="PackedScene" uid="uid://dnts7v2007dgu" path="res://sfx/AudioPlayer.tscn" id="5_jeccm"]
+[ext_resource type="PackedScene" uid="uid://drpf67f4lhmdq" path="res://sfx/MusicPlayer.tscn" id="6_gqnk5"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_6ffgp")
+levelNumber = 17
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("2_v61mo")
+
+[node name="RayGrid" type="GridContainer" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 128
+theme_override_constants/v_separation = 128
+columns = 5
+
+[node name="EmptyGrid" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid2" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid3" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid4" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid5" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid6" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid7" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid8" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid9" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid10" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid11" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid12" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid13" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid14" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid15" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid16" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid17" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid18" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid19" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid20" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid21" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid22" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid23" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid24" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid25" parent="CanvasLayer/RayGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="PrismGrid" type="GridContainer" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = -256.0
+offset_right = 104.0
+offset_bottom = 256.0
+grow_vertical = 2
+theme_override_constants/v_separation = 128
+
+[node name="EmptyGrid" parent="CanvasLayer/PrismGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid2" parent="CanvasLayer/PrismGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid3" parent="CanvasLayer/PrismGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid4" parent="CanvasLayer/PrismGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="EmptyGrid5" parent="CanvasLayer/PrismGrid" instance=ExtResource("3_nqp4f")]
+layout_mode = 2
+
+[node name="HUD" parent="." instance=ExtResource("4_mf5tr")]
+
+[node name="AudioPlayer" parent="." instance=ExtResource("5_jeccm")]
+unique_name_in_owner = true
+
+[node name="MusicPlayer" parent="." instance=ExtResource("6_gqnk5")]
+unique_name_in_owner = true
+
+[connection signal="win_hide" from="." to="HUD" method="_on_level_win_hide"]
+[connection signal="win_show" from="." to="HUD" method="_on_level_win_show"]

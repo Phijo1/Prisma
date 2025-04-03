@@ -4,6 +4,7 @@ extends VBoxContainer
 var current_level = 0
 
 func _ready():
+	%MusicPlayer.playJazz()
 	for i in range(20):
 		var button = Button.new()
 		button.text = "Level %d" %(i + 1)
@@ -12,6 +13,7 @@ func _ready():
 		v_level_container.add_child(button)
 
 func _on_level_button_pressed(scene: String):
+	CurrentLevel.musicPos = %MusicPlayer.get_playback_position()
 	get_tree().change_scene_to_file(scene)
 
 func _on_level_complete():

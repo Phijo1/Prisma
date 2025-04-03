@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dm0asgstpqj7v"]
+[gd_scene load_steps=8 format=3 uid="uid://dm0asgstpqj7v"]
 
 [ext_resource type="Script" uid="uid://frcp702o3bx" path="res://level.gd" id="1_v8kj3"]
 [ext_resource type="Script" uid="uid://cawewskl8jt4h" path="res://color_rect.gd" id="2_61w3m"]
 [ext_resource type="PackedScene" uid="uid://dieejrp8kpwab" path="res://empty_grid.tscn" id="2_crycw"]
 [ext_resource type="PackedScene" uid="uid://dta3q7vfg4hxv" path="res://mirror.tscn" id="5_usj0q"]
 [ext_resource type="PackedScene" uid="uid://dnts7v2007dgu" path="res://sfx/AudioPlayer.tscn" id="6_pdpul"]
+[ext_resource type="PackedScene" uid="uid://drpf67f4lhmdq" path="res://sfx/MusicPlayer.tscn" id="7_8hd6v"]
 [ext_resource type="PackedScene" uid="uid://b7yokb5iixl7i" path="res://menus/hud.tscn" id="8_lf3p4"]
 
 [node name="Level" type="Node2D"]
@@ -160,6 +161,9 @@ layout_mode = 2
 [node name="HUD" parent="." instance=ExtResource("8_lf3p4")]
 
 [node name="AudioPlayer" parent="." instance=ExtResource("6_pdpul")]
+unique_name_in_owner = true
+
+[node name="MusicPlayer" parent="." instance=ExtResource("7_8hd6v")]
 unique_name_in_owner = true
 
 [connection signal="win_hide" from="." to="HUD" method="_on_level_win_hide"]

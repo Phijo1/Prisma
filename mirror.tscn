@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dta3q7vfg4hxv"]
+[gd_scene load_steps=6 format=3 uid="uid://dta3q7vfg4hxv"]
 
 [ext_resource type="Script" uid="uid://bkb61m55eeiqt" path="res://mirror.gd" id="1_nk6sm"]
 [ext_resource type="Texture2D" uid="uid://wat5oi8thgov" path="res://sprites/mirror.png" id="2_nk6sm"]
+[ext_resource type="PackedScene" uid="uid://dnts7v2007dgu" path="res://sfx/AudioPlayer.tscn" id="3_dx1wu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nk6sm"]
 size = Vector2(128, 128)
@@ -13,6 +14,7 @@ size = Vector2(10, 10)
 script = ExtResource("1_nk6sm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 texture = ExtResource("2_nk6sm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -24,6 +26,9 @@ unique_name_in_owner = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GridChecker"]
 shape = SubResource("RectangleShape2D_dx1wu")
 debug_color = Color(0.979057, 0, 0.391171, 0.42)
+
+[node name="AudioPlayer" parent="." instance=ExtResource("3_dx1wu")]
+unique_name_in_owner = true
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

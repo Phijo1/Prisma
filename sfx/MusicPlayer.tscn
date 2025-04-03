@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://drpf67f4lhmdq"]
+
+[ext_resource type="Script" uid="uid://dcibqn0ksvlj4" path="res://sfx/music_player.gd" id="1_uj1ro"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D"]
+panning_strength = 0.0
+script = ExtResource("1_uj1ro")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

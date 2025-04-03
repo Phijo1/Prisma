@@ -14,6 +14,7 @@ signal win_hide
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	%MusicPlayer.playJazz()
 	var counter = 0
 	grid2DArray.append([])
 	grid2DArray.append([])
