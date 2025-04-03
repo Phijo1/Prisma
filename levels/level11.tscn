@@ -1,19 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://ecvcapddnke7"]
+[gd_scene load_steps=10 format=3 uid="uid://ecvcapddnke7"]
 
-[ext_resource type="Script" uid="uid://frcp702o3bx" path="res://level.gd" id="1_pne10"]
-[ext_resource type="PackedScene" uid="uid://dieejrp8kpwab" path="res://empty_grid.tscn" id="2_3tbs4"]
-[ext_resource type="Script" uid="uid://cawewskl8jt4h" path="res://color_rect.gd" id="2_eqsdu"]
-[ext_resource type="PackedScene" uid="uid://do10hshkcgjm" path="res://block.tscn" id="3_eqsdu"]
-[ext_resource type="PackedScene" uid="uid://bykhrc6vnbjhf" path="res://filter.tscn" id="4_3tbs4"]
-[ext_resource type="PackedScene" uid="uid://c3v2pel6k0shv" path="res://splitter.tscn" id="4_o3uw6"]
-[ext_resource type="PackedScene" uid="uid://dta3q7vfg4hxv" path="res://mirror.tscn" id="5_ttkh6"]
-[ext_resource type="PackedScene" uid="uid://dd8km2o6vd228" path="res://combiner.tscn" id="6_8eckb"]
-[ext_resource type="PackedScene" uid="uid://b7yokb5iixl7i" path="res://menus/hud.tscn" id="7_y8dwv"]
-[ext_resource type="PackedScene" uid="uid://dnts7v2007dgu" path="res://sfx/AudioPlayer.tscn" id="10_o3uw6"]
-[ext_resource type="PackedScene" uid="uid://drpf67f4lhmdq" path="res://sfx/MusicPlayer.tscn" id="11_ttkh6"]
+[ext_resource type="Script" uid="uid://frcp702o3bx" path="res://level.gd" id="1_h7pi5"]
+[ext_resource type="PackedScene" uid="uid://dieejrp8kpwab" path="res://empty_grid.tscn" id="2_6mid5"]
+[ext_resource type="Script" uid="uid://cawewskl8jt4h" path="res://color_rect.gd" id="2_wtim4"]
+[ext_resource type="PackedScene" uid="uid://c3v2pel6k0shv" path="res://splitter.tscn" id="3_c820m"]
+[ext_resource type="PackedScene" uid="uid://b7yokb5iixl7i" path="res://menus/hud.tscn" id="3_cwd2f"]
+[ext_resource type="PackedScene" uid="uid://dd8km2o6vd228" path="res://combiner.tscn" id="4_wtim4"]
+[ext_resource type="PackedScene" uid="uid://dta3q7vfg4hxv" path="res://mirror.tscn" id="5_jvmxc"]
+[ext_resource type="PackedScene" uid="uid://dnts7v2007dgu" path="res://sfx/AudioPlayer.tscn" id="8_jvmxc"]
+[ext_resource type="PackedScene" uid="uid://drpf67f4lhmdq" path="res://sfx/MusicPlayer.tscn" id="9_csfeo"]
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_pne10")
+script = ExtResource("1_h7pi5")
 levelNumber = 11
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -28,7 +26,7 @@ offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-script = ExtResource("2_eqsdu")
+script = ExtResource("2_wtim4")
 
 [node name="RayGrid" type="GridContainer" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -49,93 +47,83 @@ theme_override_constants/h_separation = 128
 theme_override_constants/v_separation = 128
 columns = 5
 
-[node name="EmptyGrid" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
 
-[node name="Block" parent="CanvasLayer/RayGrid/EmptyGrid" instance=ExtResource("3_eqsdu")]
-
-[node name="EmptyGrid2" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid2" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
 
-[node name="EmptyGrid3" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid3" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
 
-[node name="Block" parent="CanvasLayer/RayGrid/EmptyGrid3" instance=ExtResource("3_eqsdu")]
-
-[node name="EmptyGrid4" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
-layout_mode = 2
-source = [4, 1]
-
-[node name="EmptyGrid5" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid4" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
 
-[node name="EmptyGrid6" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid5" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
-dest = [6, 4]
+source = [7, 2]
 
-[node name="EmptyGrid7" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid6" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
+source = [5, 4]
 
-[node name="EmptyGrid8" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
-layout_mode = 2
-
-[node name="EmptyGrid9" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid7" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
 
-[node name="EmptyGrid10" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid8" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
 
-[node name="EmptyGrid11" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid9" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
 
-[node name="EmptyGrid12" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid10" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
 
-[node name="Block" parent="CanvasLayer/RayGrid/EmptyGrid12" instance=ExtResource("3_eqsdu")]
-
-[node name="EmptyGrid13" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid11" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
 
-[node name="EmptyGrid14" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid12" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
 
-[node name="EmptyGrid15" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid13" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
 
-[node name="Block" parent="CanvasLayer/RayGrid/EmptyGrid15" instance=ExtResource("3_eqsdu")]
-
-[node name="EmptyGrid16" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
-layout_mode = 2
-source = [6, 4]
-
-[node name="EmptyGrid17" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid14" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
 
-[node name="EmptyGrid18" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid15" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
 
-[node name="EmptyGrid19" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid16" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
 
-[node name="EmptyGrid20" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid17" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
 
-[node name="EmptyGrid21" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
-layout_mode = 2
-dest = [3, 4]
-
-[node name="EmptyGrid22" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid18" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
 
-[node name="EmptyGrid23" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid19" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
 
-[node name="EmptyGrid24" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid20" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
 
-[node name="EmptyGrid25" parent="CanvasLayer/RayGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid21" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
-dest = [3, 2]
+
+[node name="EmptyGrid22" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
+layout_mode = 2
+
+[node name="EmptyGrid23" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
+layout_mode = 2
+dest = [6, 3]
+
+[node name="EmptyGrid24" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
+layout_mode = 2
+
+[node name="EmptyGrid25" parent="CanvasLayer/RayGrid" instance=ExtResource("2_6mid5")]
+layout_mode = 2
 
 [node name="PrismGrid" type="GridContainer" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -149,38 +137,37 @@ offset_bottom = 256.0
 grow_vertical = 2
 theme_override_constants/v_separation = 128
 
-[node name="EmptyGrid" parent="CanvasLayer/PrismGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid" parent="CanvasLayer/PrismGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
 
-[node name="Filter" parent="CanvasLayer/PrismGrid/EmptyGrid" instance=ExtResource("4_3tbs4")]
-filterColour = 4
+[node name="Splitter" parent="CanvasLayer/PrismGrid/EmptyGrid" instance=ExtResource("3_c820m")]
 
-[node name="EmptyGrid2" parent="CanvasLayer/PrismGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid2" parent="CanvasLayer/PrismGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
 
-[node name="Splitter" parent="CanvasLayer/PrismGrid/EmptyGrid2" instance=ExtResource("4_o3uw6")]
+[node name="Splitter" parent="CanvasLayer/PrismGrid/EmptyGrid2" instance=ExtResource("3_c820m")]
 
-[node name="EmptyGrid3" parent="CanvasLayer/PrismGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid3" parent="CanvasLayer/PrismGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
 
-[node name="Combiner" parent="CanvasLayer/PrismGrid/EmptyGrid3" instance=ExtResource("6_8eckb")]
+[node name="Combiner" parent="CanvasLayer/PrismGrid/EmptyGrid3" instance=ExtResource("4_wtim4")]
 
-[node name="EmptyGrid4" parent="CanvasLayer/PrismGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid4" parent="CanvasLayer/PrismGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
 
-[node name="Mirror" parent="CanvasLayer/PrismGrid/EmptyGrid4" instance=ExtResource("5_ttkh6")]
+[node name="Mirror" parent="CanvasLayer/PrismGrid/EmptyGrid4" instance=ExtResource("5_jvmxc")]
 
-[node name="EmptyGrid5" parent="CanvasLayer/PrismGrid" instance=ExtResource("2_3tbs4")]
+[node name="EmptyGrid5" parent="CanvasLayer/PrismGrid" instance=ExtResource("2_6mid5")]
 layout_mode = 2
 
-[node name="Splitter" parent="CanvasLayer/PrismGrid/EmptyGrid5" instance=ExtResource("4_o3uw6")]
+[node name="Mirror" parent="CanvasLayer/PrismGrid/EmptyGrid5" instance=ExtResource("5_jvmxc")]
 
-[node name="HUD" parent="." instance=ExtResource("7_y8dwv")]
+[node name="HUD" parent="." instance=ExtResource("3_cwd2f")]
 
-[node name="AudioPlayer" parent="." instance=ExtResource("10_o3uw6")]
+[node name="AudioPlayer" parent="." instance=ExtResource("8_jvmxc")]
 unique_name_in_owner = true
 
-[node name="MusicPlayer" parent="." instance=ExtResource("11_ttkh6")]
+[node name="MusicPlayer" parent="." instance=ExtResource("9_csfeo")]
 unique_name_in_owner = true
 
 [connection signal="win_hide" from="." to="HUD" method="_on_level_win_hide"]
