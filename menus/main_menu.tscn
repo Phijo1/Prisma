@@ -43,13 +43,15 @@ script = ExtResource("1_ij7vn")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 448.0
-offset_top = 160.0
-offset_right = -448.0
-offset_bottom = -24.0
+anchors_preset = -1
+anchor_left = 0.389
+anchor_top = 0.247
+anchor_right = 0.611
+anchor_bottom = 0.963
+offset_left = -0.128021
+offset_top = -0.0559998
+offset_right = 0.127991
+offset_bottom = -0.0240479
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -79,8 +81,18 @@ vertical_alignment = 1
 [node name="MusicPlayer" parent="." instance=ExtResource("3_yjgyn")]
 unique_name_in_owner = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.198
+anchor_right = 0.5
+anchor_bottom = 0.218
+offset_top = -128.304
+offset_bottom = -141.264
+grow_horizontal = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
 material = SubResource("ShaderMaterial_pwbes")
-position = Vector2(577, 75)
+position = Vector2(1, 77)
 scale = Vector2(0.724609, 0.724609)
 texture = ExtResource("5_a63lr")
