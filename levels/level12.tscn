@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ecvcapddnke7"]
+[gd_scene load_steps=12 format=3 uid="uid://4phhflod38sy"]
 
 [ext_resource type="Script" uid="uid://frcp702o3bx" path="res://level.gd" id="1_pne10"]
 [ext_resource type="PackedScene" uid="uid://dieejrp8kpwab" path="res://empty_grid.tscn" id="2_3tbs4"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dnts7v2007dgu" path="res://sfx/AudioPlayer.tscn" id="10_o3uw6"]
 [ext_resource type="PackedScene" uid="uid://drpf67f4lhmdq" path="res://sfx/MusicPlayer.tscn" id="11_ttkh6"]
 
-[node name="Level" type="Node2D"]
+[node name="Level3" type="Node2D"]
 script = ExtResource("1_pne10")
 levelNumber = 12
 

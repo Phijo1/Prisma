@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c1ibk84rrwin1"]
+[gd_scene load_steps=13 format=3 uid="uid://c1ibk84rrwin1"]
 
 [ext_resource type="Script" uid="uid://frcp702o3bx" path="res://level.gd" id="1_4cabf"]
 [ext_resource type="Script" uid="uid://cawewskl8jt4h" path="res://color_rect.gd" id="2_n24p4"]
@@ -9,6 +9,23 @@
 [ext_resource type="PackedScene" uid="uid://c3v2pel6k0shv" path="res://splitter.tscn" id="5_qc6k0"]
 [ext_resource type="PackedScene" uid="uid://dta3q7vfg4hxv" path="res://mirror.tscn" id="6_4f5gp"]
 [ext_resource type="PackedScene" uid="uid://drpf67f4lhmdq" path="res://sfx/MusicPlayer.tscn" id="6_gn6m0"]
+[ext_resource type="Shader" uid="uid://bfg3aicbhn1ie" path="res://menus/main_menu.gdshader" id="8_gn6m0"]
+[ext_resource type="Texture2D" uid="uid://bthwx1x6qkpj7" path="res://sprites/youwin.png" id="9_obiwl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bhlsc"]
+shader = ExtResource("8_gn6m0")
+shader_parameter/waveAmplitude = 0.1
+shader_parameter/correctVertex = true
+shader_parameter/waveFrequency = 10.0
+shader_parameter/verticalWave = true
+shader_parameter/keepTransparency = true
+shader_parameter/useTime = true
+shader_parameter/waveSpeed = 1.0
+shader_parameter/progress = 0.0
+shader_parameter/firstHalf = 0.5
+shader_parameter/secondHalf = 0.5
+shader_parameter/freezeFirstHalf = false
+shader_parameter/freezeSecondHalf = false
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_4cabf")
@@ -166,6 +183,13 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="HUD" parent="." instance=ExtResource("4_4f5gp")]
+
+[node name="YouWin" type="Sprite2D" parent="HUD"]
+unique_name_in_owner = true
+visible = false
+material = SubResource("ShaderMaterial_bhlsc")
+position = Vector2(576, 319)
+texture = ExtResource("9_obiwl")
 
 [node name="AudioPlayer" parent="." instance=ExtResource("5_g1vok")]
 unique_name_in_owner = true

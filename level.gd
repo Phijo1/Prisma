@@ -110,6 +110,7 @@ func updateLight():
 		%ColorRect.won = true
 		if levelNumber == 20:
 			%AudioPlayer.playCelebrate()
+			%YouWin.visible = true
 			return
 		%AudioPlayer.playYippee()
 		if (levelNumber > CurrentLevel.value):
