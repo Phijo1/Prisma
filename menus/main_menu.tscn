@@ -1,8 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://cg6thxnbewju"]
+[gd_scene load_steps=7 format=3 uid="uid://cg6thxnbewju"]
 
 [ext_resource type="Script" uid="uid://cawewskl8jt4h" path="res://color_rect.gd" id="1_ij7vn"]
 [ext_resource type="Script" uid="uid://y01h1jbgyrgy" path="res://menus/v_level_container.gd" id="2_yjgyn"]
 [ext_resource type="PackedScene" uid="uid://drpf67f4lhmdq" path="res://sfx/MusicPlayer.tscn" id="3_yjgyn"]
+[ext_resource type="Shader" uid="uid://bfg3aicbhn1ie" path="res://menus/main_menu.gdshader" id="4_oblsv"]
+[ext_resource type="Texture2D" uid="uid://b2tbteu8ox6l6" path="res://sprites/prisma.png" id="5_a63lr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pwbes"]
+shader = ExtResource("4_oblsv")
+shader_parameter/waveAmplitude = 0.089
+shader_parameter/correctVertex = true
+shader_parameter/waveFrequency = 10.0
+shader_parameter/verticalWave = true
+shader_parameter/keepTransparency = true
+shader_parameter/useTime = true
+shader_parameter/waveSpeed = 1.0
+shader_parameter/progress = 0.0
+shader_parameter/firstHalf = 0.5
+shader_parameter/secondHalf = 0.5
+shader_parameter/freezeFirstHalf = false
+shader_parameter/freezeSecondHalf = false
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -43,6 +60,7 @@ size_flags_vertical = 3
 script = ExtResource("2_yjgyn")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,3 +78,9 @@ vertical_alignment = 1
 
 [node name="MusicPlayer" parent="." instance=ExtResource("3_yjgyn")]
 unique_name_in_owner = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_pwbes")
+position = Vector2(577, 75)
+scale = Vector2(0.724609, 0.724609)
+texture = ExtResource("5_a63lr")
