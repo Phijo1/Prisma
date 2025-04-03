@@ -45,16 +45,34 @@ func _input(event):
 				else:
 					global_position = lastLocation.global_position
 				get_node("/root/Level").updateLight()
-	if (Input.is_action_just_pressed("r_left")) and pickedUp == true:
-		direc -= 1
-		if direc == 0:
-			direc = 4
-		rotation_degrees = 360/4 * direc
-	if (Input.is_action_just_pressed("r_right")) and pickedUp == true:
-		direc += 1
-		if direc == 5:
-			direc = 1
-		rotation_degrees = 360/4 * direc
+	if (Input.is_action_just_pressed("r_left")) and mouseOver == true:
+		if pickedUp == true:
+			direc -= 1
+			if direc == 0:
+				direc = 4
+			rotation_degrees = 360/4 * direc
+			return
+		elif pickedUp == false and checkUnder() == false:
+			direc += 1
+			if direc == 5:
+				direc = 1
+			rotation_degrees = 360/4 * direc
+			get_node("/root/Level").updateLight()
+			return
+	if (Input.is_action_just_pressed("r_right")) and mouseOver == true:
+		if pickedUp == true:
+			direc += 1
+			if direc == 5:
+				direc = 1
+			rotation_degrees = 360/4 * direc
+			return
+		elif pickedUp == false and checkUnder() == false:
+			direc += 1
+			if direc == 5:
+				direc = 1
+			rotation_degrees = 360/4 * direc
+			get_node("/root/Level").updateLight()
+			return
 
 
 func _on_mouse_entered() -> void:
@@ -67,3 +85,12 @@ func _on_mouse_exited() -> void:
 
 func combiner():
 	print("TODO")
+
+func checkUnder():
+	var overlay = gridChecker.get_overlapping_areas()
+	print(overlay)
+	for i in overlay:
+		if i != self:
+			if i.has_method("checkUnder"):
+				return true
+	return false
